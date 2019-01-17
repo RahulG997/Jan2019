@@ -14,3 +14,5 @@ thank you
 hello im nikita
 hgjutk,gllg
 hgugitk,g
+git fetch example 
+welcome
