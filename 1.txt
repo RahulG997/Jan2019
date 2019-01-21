@@ -3,14 +3,21 @@ how are u
 today day 3 in hexaware training
 thank you all
 hi iam malar
-sjkfhsdjk
+sjkfhsdjk hi how are you what are you doing
 sdfklgdklv:wq
 hi 
+date 16 Jan
 bye
 hi
 bye
+<<<<<<< HEAD
 i am darshini
 thank you
+=======
+hi all 
+i am niru
+
+>>>>>>> 8ffb7f80a6a15d26fff5030a8989cff33d5a5aeb
 hello im nikita
 hgjutk,gllg
 hgugitk,g
