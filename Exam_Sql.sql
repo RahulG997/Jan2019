@@ -1,6 +1,6 @@
 1 Display the last occurrence of given char 
-in a string Ex: 'nikita' display 2nd occ
-of 'i'
+in a string Ex: 'nikita' display last time i exists
+
 
 2 Take name as 'Sanjana Kolage' split into 
 firstname and lastname 
