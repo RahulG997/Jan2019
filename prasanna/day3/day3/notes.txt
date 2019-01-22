@@ -1,0 +1,288 @@
+swarna
+satish
+swapna
+madhuri
+sowjanya
+glory
+__________________________________________________________
+
+empt
+_____
+empno
+nam
+gender
+dept
+desig
+basic
+
+constraints : 
+
+empno must be unique and not null
+nam is not null
+gender is either male or female
+dept is either asp or vb or c# or sql
+desig is junior or senior or head
+basic is between 1000 and 50000
+
+____________________________________________________
+
+enter partial data into the table. 
+
+_____________________________________________________
+
+If you want to delete entire table, then you need to give
+the command as 
+
+drop table table_name
+
+_____________________________________________________
+
+If you want to delete entire records from the table, then
+give the command as 
+
+truncate table table_name
+
+
+The difference between delete and truncate command is 
+
+by using delete you can retrieve the deleted records if necessary means some records are deleted accidently.  By using truncate command, you cannot retrieve back the records.  
+
+_________________________________________________________
+
+If you want to add/modify/delete attributes of table, then you need the help of alter command. 
+
+Assume i have a table, 
+
+create table empt
+(
+   empno int,
+   nam varchar(15),
+   dept varchar(15),
+   desig varchar(15),
+   basic int
+)
+
+constraints : 
+
+empno must be unique and not null
+nam is not null
+gender is either male or female
+dept is either asp or vb or c# or sql
+desig is junior or senior or head
+basic is between 1000 and 50000
+
+__________________________________________________________
+
+creating duplicate table. 
+
+select * into duptab from emptest
+
+You can copy the table from one database to another database as
+
+
+select * into model..cptab from master..emptest
+
+use model
+select * from cptab
+___________________________________________________________
+
+1) Creating primary key constraint 
+
+2) Unique Key constraint : 
+
+The unique key constraint is used to enforce the uniqueness on non-primary key columns for uniqueness. The unique constraint is similar to the primary key constraint except that it allows one NULL row.  Multiple unique key constraints can be created on table. 
+
+create table testemp
+(
+    empno int primary key,
+    deptno int unique,
+    city varchar(15)
+)
+
+
+create table testemp
+(
+    empno int primary key,
+    deptno int unique,
+    city varchar(15)
+)
+
+select * from testemp
+
+insert into testemp values(1,2,'washington')
+
+insert into testemp(empno,city) values(5,'Detroit')
+
+
+
+Foreign Key Constraint : You cna use the foreign key constraint to remove the inconsistency in two tables when the data in one table depends on the data in another table. 
+
+Cascade method : Ensures that if any record is deleted from the parent table, then it is automatically deleted from all child tables, then you need the help of on delete cascade method. 
+___________________________________________________________
+
+Joins  : 
+
+1) Inner Join : An innser join retrieves recrods from multiple tables by uisng a comparison operator on a common column. When an inner join is applied, only rows with values satisfying the join condition in the common column are displayed. Rows in both tables that do not satisfy the join condition are not displayed. 
+
+emptest(empno,nam,dept,desig,basic)
+leavetest(empno,lavail,ltaken,lop)
+
+1. Display empno,nam,basic,lop from two tables. 
+
+select emptest.empno,nam,basic,lop from emptest
+join leavetest on emptest.empno=leavetest.empno
+
+select nam,basic,lop,'Cash on hand'=basic-lop from emptest join
+leavetest on  emptest.empno=leavetest.empno
+
+
+2) Outer join : In comparsion with inner join, an outer join displays the result set containing all the rows from one table and matching rows from another table. An outer join displays NULL for the columns of the related table where it does not find matching records. 
+
+An outer join is of 3 types. 
+
+-> Left outer join
+-> Right outer join
+-> full outer join
+
+In left outer join, it returns all the rows from the table specified on the left side of the left outer join keyword and the matching rows from the table specified on the right side. NULL values are displayed in the columns that get data from the table specified on the right side. 
+
+select emptest.empno,nam,basic,lop from emptest
+left outer join leavetest on emptest.empno=leavetest.empno
+
+select nam,basic,lop,'Cash on hand'=basic-lop from emptest 
+left outer join
+leavetest on  emptest.empno=leavetest.empno
+
+In Right outer join : It returns all the rows from the table specified on the right side of the Right outer join keyword and the matching rows from the table specified on the left side. 
+
+select emptest.empno,nam,basic,lop from emptest
+right outer join leavetest on emptest.empno=leavetest.empno
+
+select nam,basic,lop,'Cash on hand'=basic-lop from emptest 
+right outer join
+leavetest on  emptest.empno=leavetest.empno
+
+Full Outer Join : A full outer join is a combination of left outer jon and right outer join. This join returns all the matching and non-matching rows from both tables. However, the matching records are displayed only once. In case of non-matching rows, a NULL value is displayed for the columns for which data is not applicable. 
+
+select emptest.empno,nam,basic,lop from 
+emptest full outer join leavetest on 
+emptest.empno=leavetest.empno
+
+
+Cross Join : It is also known as cartesian product, between two tables joins each rows from one table with each row of the other table. 
+
+select * from emptest cross join leavetest
+
+Self Join : If a table is joined with itself, then one row in  table correlates with other rows in the same table. In self join, a table name is used twice in the query, therefore, to differentiate tghe two instances of a single table, the table is given two alias names. 
+
+__________________________________________________________
+
+subqueries : While querying data from table(s), you might need to ue the result of one query as as input for the condition of another query. To ensure this, we need the help of subqueries. You can use subqueries to assgin the avlues to the expression in other queries. 
+
+A subquery is an sql statement that is used within another SQL statement, Subqueries are nested inside the where or having clause of the select, insert, update and delete statements.  The query that represents the parent query is called an outer query, the query that represents the subquery is called the inner query. 
+
+Depending on the output generated by the subquery and the purpose for which it is to be used in the outer query. 
+
+__________________________________________________________
+
+For suppose if you want to display the max. salary then query is 
+
+select max(basic) from emptest
+
+Display the name of the person who is getting max. salary. 
+
+select nam from emptest where 
+basic=(select max(basic) from emptest)
+
+1. Display the second max. salary. 
+
+select max(basic) from emptest where 
+basic < (select max(basic) from emptest)
+
+2. Display the third. max salary
+
+select max(basic) from emptest where 
+basic < (select max(basic) from emptest where 
+basic < (select max(basic) from emptest))
+
+3. Display the fourth max. salary
+
+select max(basic) from emptest where 
+basic < (select max(basic) from emptest where 
+basic < (select max(basic) from emptest  where 
+basic < (select max(basic) from emptest)))
+
+
+4. Display the employee details who never took leave. 
+
+select nam from emptest where empno <> 
+all(select empno from leavetest)
+
+> ALL -> Means greater than the max. value in the list. 
+
+select nam from emptest where empno <> 
+all(select empno from leavetest)
+
+
+> ANY -> Means greater than the min. value in the list. 
+
+= ANY -> Means any of the values in the list. It acs in the same way as the IN clause. 
+
+select empno,nam from emptest where empno =
+any(select empno from leavetest where empno <10)
+
+-- <> ANY -> Means not equal to any value in the list. 
+
+<> ANY(10,20,30) means not equal to 10 or not equal to 20 or not equal to 30
+
+<> ALL -> Means not equal to all the values in the list. 
+<> ALL(10,20,30) Means not equal to 10 and 20 and 30
+
+__________________________________________________________
+
+A database is the set of interrelated files, stored with min. redundancy to serve many users work concurrently. 
+
+Managing Databases : SQL Server contains the following system databases. 
+
+1) master 2) model 3) tempdb 4) msdb 5) Resource 
+
+1) Master : Records all the server-specific config. information, including authorized users, databases, system configuration settings, and remote servers.  In additon, it records the instance-wide metadata, such as logon accounts, endpoints and system config. settings. 
+
+The master database also stores the initialization of the sql server. Therefore if the master database is unavaialble, the sql server database engine will not be started. 
+
+2) tempdb : It is a temporary database that holds all temporary tables and stored procedures. It is automatically used by the server to resolve large or nested queries or to sort data before displaying the results to the user. 
+
+3) model : This database acts as a template or a prototype for a new databases. whenever a database is created, the contents of the model databae are copied to the new database. In this database, you can set the detault values for the various args to be specified by using DDL(Data Definition Language)  statements to create database objects. 
+
+4) msdb : This database supports the sql server agent, The SQL Server agent is a tool that schedules periodic activities of the SQL server, such as backup and database mailing. 
+
+5) Resource : Resource database is a read-only database that contains all the system objects, such as system-defined procedures and views that are included with sql server. 
+
+
+
+___________________________________________________
+
+DDL -> Create, alter, drop, truncate becauase 
+
+create table table_name 
+
+DML -> Insert, update and delete 
+
+insert into table_name 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

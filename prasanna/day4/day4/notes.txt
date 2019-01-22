@@ -1,0 +1,174 @@
+satish
+madhuri
+glory
+swapna
+narasimha
+sowjanya
+swarna
+________________________________________________________
+
+To create database, you need to give the command as
+
+create database database_name
+
+To rename the database, you need to give the command as
+
+sp_renamedb oldname,newname
+
+To drop the database, then 
+
+drop database databasename
+
+______________________________________________________
+
+Rule : A rule enforces domain integrity for columns or user-defined data types. The rule is applied to the column or the user-defined data type before the insert or update statement issued. In other words, a rule specifies a restriction on values of a column or a user-defined type. Rules are used to implement business-related restrictions or limitations.  
+
+syntax : 
+
+create rule rule_name as condition_expression
+
+Ensure we have emp table and in that, dept is 
+either asp or vb or csh 
+
+to create rule, the syntax is 
+
+create rule rule_name as condition_expression
+
+To bind the rule with corresponding table, you need 
+
+sp_bindrule <rule>,<object-name>
+
+To unbind the rule 
+
+sp_unbindrule 'table.field'
+
+Creating User-defined data type : 
+
+User-defined data types are custom data types defined by the users with the custom name. User-defined data types allow modifying the composite data type used in the database. 
+
+sp_addtype 'customname','datatype'
+
+To drop the datatype, then you need to give the command as
+
+sp_droptype 'datatype'
+
+Creating Default : You can create the default by using 
+
+create default default name as 'value'
+
+You can bind the default on the table by using 
+
+sp_bindefault 'defaultname','table.field'
+
+To drop the default, then you need to give the command as
+
+sp_unbindefault 'table.field'
+
+__________________________________________________________
+
+To rename the table, you need to give the command as 
+
+sp_rename oldtable,newtable
+_________________________________________________________
+
+Indexes : 
+
+To reduce the data query time, the SQL server allows you to implement indexes on tables. An indx is a data structure associated with a table that helps in fast search of data in the table.  
+
+benefits : 
+
+-> Accelerate queries that join tables, and perform sorting and grouping
+-> Enforce uniqueness of rows. 
+
+The sql server allows you to create the following types of indexes. 
+
+1) clustered index
+2) Nonclustered index
+
+Clustered index is an index that sorts and stores the data rows in the table based on thier key values. Therefore, the data is physically sorted in the table, when the clustered index is defined on it. Only one clustered index can be created per a table. You should build the cl. index on attributes that have a high percentage of unique values and are not modified often. 
+
+You can create a clustered index as 
+
+create clustered index index_name on
+tablename(field)
+
+
+
+2) Nonclusterd index : These are typically created on columns used in joins and the where clause.  These indexes caqn also be created on columns where the values are modified frequently. You can created 249 non clustered indexes per a table. By default sql server created nonclustered index. 
+
+The data in the nonclustered index is present in the random order, but the logical order is specified by the index. 
+
+Guidelines for creating indexes : 
+
+1) Create clustered indexes on columns that have unique or null values. 
+2) Do not create an index that is not used frequently. You require time and resources to maintain indexes. 
+3) Create clustered index before creating a nonclustered index. A clustered index chyanges the order of rows. A nonclustered index would need to be rebuild if it is build before a clustered index. 
+4) Create nonclustered indexes on all columns that are frequently used in predicates and join condition in queries. 
+
+___________________________________________________________
+
+Views 
+
+A view is a virtual table, which provides access to a subset of columns from one or more tables. It is a query stored as an object in the database, which does not have its own data. A view can derive from one or more tables, called the base tables or underlying tables. 
+
+Guidelines to create view : 
+
+1) The name of ;the view must follow the rules for identifier and must not be the same as that of the table on which it is based. 
+2) A view can be created only if there is a select permission on its base table. 
+3) A view cannot derive its data from temporary tables. 
+4) In a view, order by cannot be used in the select statement. 
+
+create view view_name 
+as
+  select * from table_name
+
+create view tv1 
+as
+   select empno,nam,basic from emptest
+
+select * from tv1
+
+update emptest set basic=basic+2000 where nam='satish'
+
+select * from emptest
+
+select empno,basic from tv1
+
+Restrictions at the time of modifying data through views :
+
+1) You cannot modify data in a view if the modification affects more than one underlying table. 
+
+Altering Views : If you define a view with a select * stat. and then alter the structure of the underlying tables by adding columns, the new columns do not appear in the view. 
+
+2) If you want to drop the view, then you can do that by using 
+
+drop view view_name
+___________________________________________________________
+
+Batches : 
+
+A batch is a group of SQL statements submitted together to the SQL server for execution. While executing batches, the SQL Server compiles the statements of batch into a single execuable unit called an execution plan.  
+
+
+Using Variables : 
+
+You can declare the varaibles by using the declare statement. 
+
+System variables have the prefix as @@, whereas user-defined variables have prefix as @.
+
+Displaying the user-defined messages 
+
+You can display the user-defined messages by using 
+print statement 
+
+
+	
+
+
+
+
+
+
+
+
+
