@@ -1,0 +1,146 @@
+satish
+swarna
+madhuri
+narasimha
+glory
+swapna
+sowjanya
+______________________________________________________
+
+Transaction : A transaction can be defined as a sequence of operations performed together as a single unit.  A trasaction possess four properties ACID. Atomicity, 
+Consistency, Isolation, Durability. 
+
+Atomicity : This state ensures that either all the data modifications are perfomed or none of them are performed. 
+
+Consistency : This is a state in which all data is in a consistency state after a transaction is completed successfully.
+
+Isolation : This states that any data modification made by concurrent transactions must be isolated from the modifications made by other concurrent transactions.  There is no scope for the transaction to seee an intermediate state. 
+
+Durability : This states that any change in data by a completed transaction remains permanent in the system. Therefore, any change in data due to a completed transaction persists even in the event of system failure. 
+
+Transaction Management ensures that it must be successfully completed after it has started, or SQL server undoes all the data modifications since the start of the transaction. 
+
+Locking is a feature that preserves transaction isolation.
+
+Logging is a feature that ensures transaction durability. 
+
+
+Explicit Transaction: It is one in which both start and end of the transaction are defined explicityly.  There are called user-defined tranasactions, that are specified by using BEGIN TRANSACTION and COMMIT TRANSACTION statements. 
+
+BEGIN TRANSACTION : It marks the start of explicit transaction. 
+
+COMMIT TRANSACTION : It marks the end point of an explicit transaction.  
+
+AUTOCOMMIT TRANSACTION : This is the default transaction management mode of SQL Server. Based on the completeness of every T-SQL statement, transactions are automatically committed or rolled back. 
+
+Rollback Transaction : It roll backs an explicit or implicit transaction to the beginning of the transaction, or to a save-point within a transaction. 
+
+1) Create a transaction ensure increase basic by 5000 to all employees of 'asp' dept, if avg(basic) is > 25000 then cancel the transaction, otherwise commit transaction. 
+
+begin tran
+declare @n int
+update emptest set basic=basic+5000 where dept='ASP'
+select @n=avg(basic) from emptest where dept='ASP'
+   if @n>=25000
+   begin
+   rollback tran
+   print 'Transaction is rolled back'
+end
+else
+begin
+    commit tran
+    print 'transaction is committed'
+end
+
+Reverting Part of Transactions 
+
+save transaction : This statement sets a save-point within a transaction. A save-point divides a transaction into logical units so that the trasnsaction can return to the save point, if a part of transaction is conditionally cancelled. If you rollback a transaction to a save-point, either the transaction must proceed to completion, or it must be canceled completely. 
+
+Transaction Concurrency : Sql Server provides both optimistic and pessimistic concurrency controls. Default is pessimistic whereas optimistic concurrency can be done through cursors. 
+
+Optimistic Concurrency : Works on the basis of assumption that the resource conflicts between multiple users are unlikely but not impossible.  Resources are checked only when a transaction has to commit, in order to determine if any conflict has occurred. 
+
+Pessimistic Concurrency : It control locks resources for the duration of a transaction, unless a deadlock occurs, a transaction is assured of successful completion. 
+
+Concurrency Problems : In absence of locking, there are four types of prblems that may occur if transaction use the same data from a database at the same time.  These problems are : 
+
+1) Dirty Read (uncommitted dependency)
+2) Inconsistent Analysis (non-repeatable)
+3) Phantom Reads.
+
+Dirty Read can be explained with example as An employee making changes to the company policy document. While changes are being made, another employee takes a copy of the doucment, which includes all changes made so far, and distributes it to all. Now, the distributed document contains information that no longer exists, and should be treated as if it never existed. 
+
+Soln to this problem would be, that no one should be able to rad the changed document until the first editor determines that the changes are final. 
+
+2) Inconsistent Analysis : It is also known as non-repeatable problem. An employee reads a particular document twice. Between the two readings by the employee, the writer is in the process of rewriting the original document. When the employee reads the document for the second time, it has completely changed. The result is that the original read is not repeatable, leading to confusion. 
+
+Soln : the employee sould read the document only after the writer has completely finshed writing it. 
+
+3) Phantom Reads : It is also known as phantom problem. 
+
+The supervisor reads and makes suggestions to change the doc. submitted by the employee. When the suggested changes are being incorporated into the master copy of the document, the other employees find that new and un-reviewed content has been added to the document by employee. 
+
+No one should be able to read new material from the document until the editor and production deparment finish working on the original document. 
+
+_______________________________________________
+
+A deadlock is a situation where two users have locks on separate objects, and each user is waiting for a lock on the other's object. It usually occurs in the multi-user environment. 
+
+In that Transaction A has locked the DISTRIBUTOR table and want to lcok the PRODUCTS table. Transaction B is locked the PRODUCTS table and want to lock the DISTRIBUTOR table. This results in DeadLock. as both transactions wait for the other transactions to release the table. 
+
+In order to detect the deadlock situations, SQL server scans for sessions that are waitinkg for a lock request. If any circular chain of lock request is found, SQL server then cancels the least expensive transaction and marks that transaction as the deadlock victim. 
+
+The periodic detection mechansim of SQL Server reduces the overhead of deadlock detection because deadlocks affect only a small no.of transactions. 
+
+______________________________________________________
+
+
+Cursors : 
+
+A cursor is a database object that helps in accessing and manipulating data in a given result set. The main advantage of cursors is that you can process data row-by-row. 
+
+Cursors sever as a mecahnism for applications to operate on a single row or a set of rows. 
+
+1) Allow specific rows to be retrieved from the result set. 
+2) Allow the current row in the result set to be modified. 
+3) Help navigate from the current row in the result set to a different row. 
+4) Allow data modified by other users to be visible in the result set. 
+
+declaring cursors : 
+
+You can define the cursor by using declare cursor statement. 
+
+declare cursor_name cursor for select statement. 
+
+Opening Cursors : You can open a previously declared cursor by using OPEN statement. 
+
+OPEN cursor_name
+
+Fetching Data : After opening the cursor, you can retrive a specific row from the rsult set of the cursor. 
+
+fetch cursor into variable(s). 
+
+You can notify the status by using @@fetch_status. 
+
+@@fetch_status returns 0 if successful execution of the fetch statement. 
+
+-1 unsuccessful execution of the fetch statement. 
+-2 Row being fetched is missing. 
+
+Closing Cursors : You must close the cursor in roder to release the resources held by it. A cursor can be closed with the CLOSE statement. 
+
+CLOSE cursor_name.
+
+Deallocate cursors : 
+
+You can remove the definition of the cursor that had been defined by the DECLARE cursor statement. All the resources held by the cursor are released. A cursor can be deallocated by using the DEALLOCATE statement. 
+
+DEALLOCATE cursor_name. 
+
+
+
+
+
+
+
+

@@ -1,0 +1,319 @@
+sowjanya
+swapna
+madhuri
+satish
+glory
+narasimha
+_________________________________________________________
+
+Batch : Batches are groups of SQL statements submitted together to SQL server for execution. A batch is parsed, compiled and executed.  
+
+Restriction for creating a batch :
+
+-> You cannot bind rules and defaults to columns and use them in the same batch. 
+-> You cannot define and use the check constraint in the same batch. 
+
+-> You cannot alter the table and reference the new column in the same batch. 
+
+You can declare the variables in batch as 
+
+declare @n int
+
+you can set the value to the variable as
+
+set @n=5
+
+
+You can print the value of the variable by using 
+
+print statement. 
+ 
+print @n
+
+
+Control structures : 
+
+if..else
+case
+while 
+
+_______________
+
+Stored Procedures 
+
+A stored procedures is a precompiled object stored in the database. This means that a procedure is compiled beforehand and is readily available for the various apps to execute.  
+
+benefits : 
+
+Sql Server does not have to compile the procedure repeatedly.
+
+Applications need not to submit multiple T-SQL statements to the server for the purpose of processing. 
+
+Users can be granted permission to execute a stored procedure even if they do not own the prcedure
+
+Types of Stored Procedures : 
+
+1) user-defined Stored Procedures : Created by the users and stored in the database. 
+
+2) System stored procedures : have names prefixed with sp_. The system databases, which store system stored procedures are master and msdb databases. 
+
+3) Temporary stored procedures : Have names prefixed with @ symbol, they are storedin the tempdb database and are automatically dropped when the client connection to the server terminates. 
+
+4) Remote Stored Procedures : These are the procedures that are created and stored in the databases on remote servers. There are to be accessible from various servers. 
+
+______________________________________________________
+
+
+creating the procedure : 
+
+Syntax : 
+
+create procedure proc_name
+as
+begin
+    sqlstat(s)
+end
+
+After creating the procedure, you can execute the procedure as 
+
+exec proc_name 
+or
+proc_name
+
+To check for the existence of the stored procedure, then 
+
+you need to give the command as 
+
+sp_help proc_name 
+
+sp_help prcdisp
+
+To display the contents of the stored proc, then you need to give the command as 
+
+sp_helptext prcdisp
+
+__________________________________________________________
+
+Creating a Generic Stored Procedure 
+
+A parameter is a placeholder ini a query or a stored procedure that accespts a user-defined value whenever the query or stored procedure is executed. 
+
+Types of Parameters : 
+
+The stored procedure have 2 types of parameters 
+
+1) Input Parameter : It allows the invoker to pass the data vlue to the procedure. 
+2) Output Parameter : Allows the stored procedure to pass data back to the invoker. 
+
+__________________________________________________________
+
+Creating the default parameter : 
+
+In case youi do not pass any parameters to a stored procedure, it would generate an error mesage. You can use default parameters to pass value to the stored procedure in case no value is passed to it. 
+
+___________________________________________
+
+Notifying successful execution. 
+
+You can use RETURN statement to return values from a stored procedure. The RETURN statement allows the stored procedure to return an integer value to the invoker.  If the value is not specified, then the stored procedure returns a default value of 0 or 1, depending on the sucessful execution of the stored procedure. 
+
+Guidelines for Returning values : 
+
+-> Return the value 0 to indicate successful execution.
+-> Return a value other than 0 to indicate an error. 
+
+_____________________________________________________
+
+Calling a stored procedure from another procedure. 
+
+create proc prc2 @na varchar(15)
+as
+begin
+   declare @no int,@tot int
+   select @no=sno,@tot=tot from student where 
+      nam=@na
+   print 'Student No ' +convert(char(10),@no)
+   print 'Total is  ' +convert(char(10),@tot)
+end
+
+drop proc exec2
+create proc exec2 @na varchar(15)
+as
+begin
+   exec prc1 @na
+   exec prc2 @na
+end
+
+exec2 Nithya
+
+select * from student
+_________________________________________________________
+
+OUTPUT Parameter : 
+
+To return a single value of the integer type, you use the RETURN keyword as discussed earlier. To return more than one value from the procedure, the output option can be used while writing the procedure. This is supplied as an OUTPUT parameter to the procedure. 
+
+create proc prc1 @eno int,@na varchar(15) output,@bas int output
+as
+begin
+  if exists(select * from emptest where empno=@eno)
+  begin
+    select @na=nam,@bas=basic from emptest where empno=@eno
+    return 0
+  end
+  else
+   return 1
+end
+
+create proc prc2 @eno int 
+as
+begin
+  declare @na varchar(15)
+  declare @bas int,@retval int
+  exec @retval=prc1 @eno,@na output,@bas output
+  if (@retval=0)
+  begin
+    print 'Name is  ' + @na
+    print 'Basic  ' +convert(char(10),@bas)
+ end
+  else 
+    print 'Record Not found'
+end
+
+exec prc2 355
+___________________________________________________________
+
+A functions is a subprogram, that which returns a value by depending on some calculation. 
+
+you can create a function as 
+
+create function function_name (par(s) ) returns datatype
+as
+begin
+....
+....
+end
+
+The custom functions in sql server are called user-defined functions. 
+
+create function fac(@n int) returns int
+as
+begin
+ declare @f int,@i int 
+ set @f=1
+ set @i=1
+ while @i <= @n
+ begin
+   set @f=@f*@i
+   set @i=@i+1
+ end
+ return @f
+end
+
+select dbo.fac(5)
+
+sp_helptext ncr
+
+drop function ncrs
+
+create function ncrs(@n int,@r int) returns int
+as
+begin
+ declare @r1 int,@r2 int,@r3 int,@res int
+ select @r1=dbo.fac(@n)
+ select @r2=dbo.fac(@r)
+ select @r3=dbo.fact(@n-@r)
+ set @res=(@r1)/(@r3 * @r2)
+ return @res
+end
+
+__________________________________________________________
+
+Trigger : 
+
+A trigger is a block of code that constitutes a set of T-SQL statements that are activated in response to certain actions. Triggers help in maintaining consistent, reliable and correct data in tables.  They enable the performance of complex actions and cascade these actions to other dependent tables. 
+
+characterstics of a trigger : 
+
+It is fired automatically by the SQL server whenever any data modification statement is issued. 
+
+It is to be executed automatically when corresponding DML statement is fired. 
+
+It prevents incorrect, unauthorized and inconsistent changes in data. 
+
+It cannot return data to the user. 
+
+create trigger trigger_name on table_name
+for dml_statement{insert or update or delete}
+as 
+sql_statements. 
+
+Magic Tables : Whenever a trigger fires in response to the insert, delete or update statement, two special tables are created. These are called inserted and deleted tables. They are also to be referred as magic tables. 
+
+The inserted table contains the copy of all records that are inserted in the trigger table. The deleted table contains all the records that have been deleted from the trigger table. Whenever any updation takes place, the trigger uses both the inserted and deleted tables. 
+
+________________________________________________________
+
+The Delete trigger is fired whenever an attempt is made to delete a row from the trigger table.Whenever the delete statement is issued, the specified rows from the trigger table are deleted and are added to the deleted table. 
+
+There are 3 ways of implementing referential integrity using a DELETE trigger. These are : 
+
+cascade method : Deletes records from the dependent tables whenever a record is deleted from the parent table. 
+
+restrict method : Restricts the deletion of records from the master table if the related records present in the dependent tabels. 
+
+nullify method : Nullifies the values in the specified columkns of the dependent tables whenever a record is deleted from the master table. 
+
+To restrict the delete operation on table, then you need to write the trigger as 
+
+create trigger trgdel 
+on emptest for delete 
+as
+   print 'deleting records denied'
+   rollback tran
+return 
+
+delete from emptest where empno=2
+
+________________________________________________________
+
+Update trigger : When the update trigger is fired, it uses two logical tables for its operations - the deleted table that contains the original rows and the inserted table that stores the new rows. Only after all the rows get updated, the deleted and inserted tables get populated and the trigger is fired. 
+
+create trigger trgupd1 on emptest for update
+as
+ if update(basic)
+ begin
+    print 'Update is not possible'
+    rollback tran
+ end
+
+select * from emptest
+
+update emptest set basic=basic+4500 where 
+empno=1
+
+create trigger trgupd2 on emptest for update
+as
+  print 'Updated the record successfully'
+
+If two similar triggers are created on a single table, then you can give the priorities to the triggers as
+
+sp_settriggerorder <triggername>,<order-value>,<DML-operation>
+
+Order-values are 
+
+FIRST executes first
+LAST executes last
+NONE executes random. 
+
+
+
+
+
+
+
+
+
+
+
+
