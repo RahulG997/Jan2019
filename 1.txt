@@ -2,6 +2,7 @@ hi
 how are u
 today day 3 in hexaware training
 thank you all
+<<<<<<< HEAD
 hi iam malar
 sjkfhsdjk hi how are you what are you doing
 sdfklgdklv:wq
@@ -16,3 +17,9 @@ i am niru
 hello im nikita
 hgjutk,gllg
 hgugitk,g
+=======
+hello im nikita
+hgjutk,gllg
+hgugitk,g
+
+>>>>>>> 3a75f115f072cf12a2fdbed1681d7155e8d64006
