@@ -1,6 +1,25 @@
 hi
 hello hi hello haiiii
 how are u
+<<<<<<< HEAD
 hi i am sanjana
 how are you all
 hexaware chennai
+=======
+today day 3 in hexaware training
+thank you all
+hi iam malar
+sjkfhsdjk hi how are you what are you doing
+sdfklgdklv:wq
+hi 
+date 16 Jan
+bye
+hi
+bye
+hi all 
+i am niru
+
+hello im nikita
+hgjutk,gllg
+hgugitk,g
+>>>>>>> 004d2d39da23ea8ff903468210a6870c0f442876
