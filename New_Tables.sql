@@ -6,6 +6,8 @@ create table dept(
 );
 drop table emp
 
+use sqlday3
+
 create table emp(
   empno    int,
   ename    varchar(10),
@@ -15,8 +17,8 @@ create table emp(
   sal      int,
   comm     int,
   deptno   int,
-  constraint pk_emp primary key (empno),
-  constraint fk_deptno foreign key (deptno) references dept (deptno)
+  constraint pk_emp_ENO primary key (empno),
+  constraint fk_EMP_deptno foreign key (deptno) references dept (deptno)
 );
 
 /*
