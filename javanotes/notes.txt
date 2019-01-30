@@ -77,6 +77,51 @@ public static void main(String[] args)
 
 static ensures that object of the class will not access the main function.
 
+You can create an object to the class as 
+
+class_name obj=new class_name();
+
+Scanner : Which allows you to read data from keyboard. 
+
+it is there in java.util package, you have to import as 
+
+import java.util.Scanner;
+
+Scanner sc=new Scanner(System.in);
+
+nextInt()
+nextDouble();
+nextLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 If you want to display the values, then you need to use the output statement as
 
 System.out.println()
