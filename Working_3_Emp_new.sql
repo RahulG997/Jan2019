@@ -29,7 +29,7 @@ select name from Emp where instr(Name,' ')=0
 
 select name from Emp where instr(Name,' ')=2
 
-
+DROP TABLE EMP
 
 SELECT name from emp where length(name)-length(replace(name,' ',''))=0
 SELECT name from emp where length(name)-length(replace(name,' ',''))=1

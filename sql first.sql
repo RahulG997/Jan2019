@@ -1,0 +1,185 @@
+Desc emp
+
+select * from emp
+
+SELECT 
+	Empno,
+    Name,
+    Basic
+FROM EMP
+WHERE Basic=42233 
+
+
+SELECT * FROM EMP
+WHERE BASIC> 50000
+
+SELECT * FROM EMP
+WHERE DEPT='JAVA'
+
+SELECT * FROM EMP
+WHERE BASIC BETWEEN 20000 AND 50000
+
+SELECT * FROM EMP
+WHERE BASIC NOT BETWEEN 20000 AND 50000
+   
+SELECT * FROM EMP
+WHERE DEPT IN('JAVA','DOTNET')
+
+SELECT * FROM EMP
+WHERE DEPT NOT IN('JAVA')
+
+SELECT * FROM EMP
+WHERE NAME LIKE 'k%'
+   
+SELECT * FROM EMP
+WHERE nAME LIKE 'kA%'   
+
+SELECT * FROM EMP
+WHERE nAME LIKE '%AM'
+
+SELECT * FROM EMP
+ORDER BY NAME DESC
+
+SELECT * FROM EMP
+ORDER BY DEPT
+
+SELECT * FROM EMP
+ORDER bY DEPT,nAME DESC
+
+SELECT DISTINCT DEPT FROM EMP
+
+SELECT INSTR('NIREESHA Gupta',' ')
+
+SELECT NAME,
+INSTR(NAME,'Z') FROM EMP
+
+SELECT NAME,
+LENGTH (NAME) FROM EMP
+
+SELECT NAME,
+REVERSE(NAME) FROM EMP
+
+SELECT rEVERSE('sAHIL')
+
+SELECT LEFT('sAHIL',3)
+
+SELECT NAME,
+LEFT(NAME,3),RIGHT (NAME,3) FROM EMP
+
+SELECT NAME,
+LOWER(NAME),UPPER(NAME) FROM EMP
+
+SELECT SUBSTRING('JAVA TRAINING',3,5)
+
+SELECT REPLACE('JAVA TRAINING','JAVA','SQL')
+
+SELECT REPLACE('NIREESHA','E','A')
+
+SELECT 
+	EMPNO,
+    DEPT,
+    BASIC,
+    CASE DEPT
+		WHEN 'JAVA' THEN BASIC+1000
+        WHEN 'DOTNET' THEN BASIC+1500
+    END "UpdatedBasic"
+    FROM EMP
+    
+    
+    
+SELECT ABS(-12)
+
+SELECT POW(2,3)
+
+SELECT SQRT(9)
+
+SELECT CEILING(12.800)
+
+SELECT FLOOR(12.999)
+
+SELECT ROUND(7868.6778,2)
+
+SELECT ROUND(7868.6778,0)
+
+SELECT ROUND(7868.6778,-2)
+
+SELECT ROUND(7868.6778,-1)
+
+SELECT ROUND(7868.6778,-3)
+
+SELECT ROUND(7868.6778,1)
+
+select length(Name),Name from Emp
+
+select * from emp
+
+SELECT Name,LENGTH(Name) - LENGTH(REPLACE(Name, ' ', ''))+1 As NameLength from emp
+
+select Name,left(Name,Instr(Name,' ')) as FirstName,right(Name,Length(Name)-Instr(Name,' ')) as LastName from emp
+
+select Length('Nikita')-instr(reverse('Nikita'),'I')+1 as LastOccurence 
+
+select Length('misissipi')-length(replace('misissipi','i','')) 
+
+UPDATE EMP SET NAME='VAIBHAV' WHERE EMPNO=4
+
+select Name  from emp where LEFT(Name,1)=RIGHT(Name,1)
+
+
+sELECT
+	CASE
+    WHEN INSTR('NIKITA','J') = 0 THEN 0
+    ELSE Length('Nikita')-instr(reverse('Nikita'),'J')+1
+    END AS LASTOCC
+    
+    select Name,left(Name,Instr(Name,' ')) as FirstName,right(Name,Instr(Name,' ')) as LastName from emp
+
+SELECT CURDATE()
+
+SELECT CURTIME()
+
+SELECT LAST_DAY(CURDATE())
+
+SELECT DATE_FORMAT(CURDATE(), '%M')
+
+SELECT DATE_FORMAT(CURDATE(), '%m')
+
+SELECT DATE_FORMAT(CURDATE(), '%D')
+
+SELECT DATE_FORMAT(CURDATE(), '%d')
+
+SELECT DATE_FORMAT(CURDATE(), '%W')
+
+SELECT DATE_FORMAT(CURDATE(), '%w')
+
+SELECT Dayofmonth(CURDATE())
+
+SELECT DayofWEEK(CURDATE())
+
+SELECT QUARTER(CURDATE())
+
+SELECT DATEDIFF(CURDATE(),'2018-12-12')
+
+SELECT LAST_DAY(ADDDATE(CURDATE(), INTERVAL -1 MONTH))
+
+SELECT LAST_DAY(ADDDATE(CURDATE(), INTERVAL 1 MONTH))
+
+SELECT ADDDATE(ADDDATE(ADDDATE(CURDATE(), INTERVAL 5 YEAR),INTERVAL 7 MONTH),INTERVAL 10 DAY) 
+
+
+SELECT * FROM EMP
+
+
+
+SELECT NAME FROM EMP WHERE LENGTH(NAME)- LENGTH(REPLACE(NAME,' ',''))=1
+
+
+select Name,left(Name,Instr(Name,' ')) as FirstName,right(Name,Instr(Name,' ')) as LastName from emp
+
+select Name,left(Name,Instr(Name,' ')) as FirstName,right(Name,Length(Name)-Instr(Name,' ')) as LastName from emp
+
+
+
+
+SELECT * FROM EMP WHERE 
+LEFT(NAME,1) = LEFT(right(Name,Length(Name)-Instr(Name,' ')),1)
