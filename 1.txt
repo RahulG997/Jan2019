@@ -2,6 +2,10 @@ hi
 how are u
 today day 3 in hexaware training
 thank you all
+<<<<<<< HEAD
+Mera naam Joker
+Tamasha
+=======
 hi iam malar
 sjkfhsdjk hi how are you what are you doing
 sdfklgdklv:wq
@@ -16,6 +20,7 @@ thank you
 =======
 hi all 
 i am niru
+>>>>>>> e1db813f82437a2e53fb956c671ed7c8d727be99
 
 >>>>>>> 8ffb7f80a6a15d26fff5030a8989cff33d5a5aeb
 hello im nikita
