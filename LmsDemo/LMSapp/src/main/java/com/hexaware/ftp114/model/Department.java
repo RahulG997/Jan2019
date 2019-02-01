@@ -61,16 +61,19 @@ public class Department{
     }
 	
 	public static void delDept(int deptno){
-		return dao().finddel(deptno);
+        dao().finddel(deptno);
+    }
 		
 	public static void updateNameLocMain(int deptno, String dname, String loc) {
-		return dao().updatenameloc(deptno, dname, loc);
+        dao().updatenameloc(deptno, dname, loc);
+    }
 		
 	public static void updateNameMain(int deptno, String dname) {
-		return dao().updatenameloc(deptno, dname);
+        dao().updatename(deptno, dname);
+    }
 
 	public static void updateLocMain(int deptno, String loc) {
-		return dao().updatenameloc(deptno, loc);	
-		
+		dao().updateloc(deptno, loc);	
+    }
 		
 }    

@@ -2,6 +2,7 @@ package com.hexaware.ftp114.util;
 import java.util.Scanner;
 
 import com.hexaware.ftp114.model.Employee;
+import com.hexaware.ftp114.model.Department;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 

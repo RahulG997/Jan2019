@@ -7,7 +7,7 @@ public class DbConnection{
         try{
             Class.forName("com.mysql.jdbc.Driver");
             DBI dbi = new DBI("jdbc:mysql://localhost:3306/sqlpractice?useSSL=false",
-                "root","Password123");
+                "root","root");
             System.out.println("Connected...");
             return dbi;
 

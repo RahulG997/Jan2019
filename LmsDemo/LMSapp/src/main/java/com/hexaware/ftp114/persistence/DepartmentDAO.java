@@ -31,16 +31,16 @@ public interface DepartmentDAO  {
         @Bind("loc") String loc);
 		
   @SqlUpdate("UPDATE DEPT SET DNAME=:dname,LOC=:loc WHERE DEPTNO = :deptno")
-  void updateNameloc(@Bind("deptno") int deptno,
+  void updatenameloc(@Bind("deptno") int deptno,
         @Bind("dname") String dname,
         @Bind("loc") String loc);
 		
   @SqlUpdate("UPDATE DEPT SET DNAME=:dname WHERE DEPTNO = :deptno")
-  void updateName(@Bind("deptno") int deptno,
+  void updatename(@Bind("deptno") int deptno,
         @Bind("dname") String dname);
 		
   @SqlUpdate("UPDATE DEPT SET DNAME=:dname,LOC=:loc WHERE DEPTNO = :deptno")
-  void updateLoc(@Bind("deptno") int deptno,
+  void updateloc(@Bind("deptno") int deptno,
         @Bind("loc") String loc);		
 		
 		

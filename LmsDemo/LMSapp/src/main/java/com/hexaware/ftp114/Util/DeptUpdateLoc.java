@@ -2,6 +2,7 @@ package com.hexaware.ftp114.util;
 import java.util.Scanner;
 
 import com.hexaware.ftp114.model.Employee;
+import com.hexaware.ftp114.model.Department;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 
@@ -13,7 +14,7 @@ public class DeptUpdateLoc{
         int deptno = Integer.parseInt(sc.nextLine());
         System.out.println("Enter Department location: ");
         String loc  = sc.nextLine();
-        Department.updateNameLocMain(deptno, loc);
+        Department.updateLocMain(deptno, loc);
         System.out.println("Location updated...");
     }
 

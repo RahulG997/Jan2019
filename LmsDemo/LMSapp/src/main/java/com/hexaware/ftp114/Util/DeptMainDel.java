@@ -2,6 +2,7 @@ package com.hexaware.ftp114.util;
 import java.util.Scanner;
 
 import com.hexaware.ftp114.model.Employee;
+import com.hexaware.ftp114.model.Department;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 
@@ -12,7 +13,7 @@ public class DeptMainDel{
         System.out.println("Enter Department no. ");
         int deptno = Integer.parseInt(sc.nextLine());
         Department.delDept(deptno);
-        System.out.println("Record Inserted...");
+        System.out.println("Record Deleted...");
     }
 
 }
