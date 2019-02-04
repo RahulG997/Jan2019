@@ -21,3 +21,11 @@ i am niru
 hello im nikita
 hgjutk,gllg
 hgugitk,g
+
+ /**
+    * Update LeaveBalance after ApplyLeave.
+    *@param empId the id of the Manager.
+    * @param updBal the latest leave Balance.
+    */
+    @SqlUpdate("UPDATE EMPLOYEE SET EMP_AVAIL_LEAVE_BALANCE = :updBal WHERE EMP_ID = :empId")
+    void decrement(@Bind("updBal") int updBal, @Bind("empId") int empId);
