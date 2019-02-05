@@ -97,7 +97,7 @@ select min(annualpremium) from policy;
 
 select count(*) from policy
 
-
+drop table policy
 
 
 
