@@ -26,3 +26,22 @@ i am niru
 hello im nikita
 hgjutk,gllg
 hgugitk,g
+<<<<<<< HEAD
+______________________
+
+<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+=======
+
+ /**
+    * Update LeaveBalance after ApplyLeave.
+    *@param empId the id of the Manager.
+    * @param updBal the latest leave Balance.
+    */
+    @SqlUpdate("UPDATE EMPLOYEE SET EMP_AVAIL_LEAVE_BALANCE = :updBal WHERE EMP_ID = :empId")
+    void decrement(@Bind("updBal") int updBal, @Bind("empId") int empId);
+>>>>>>> 9d6465df48015ff7056374e64c638f454f754f8d

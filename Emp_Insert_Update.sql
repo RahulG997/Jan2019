@@ -13,72 +13,43 @@ insert into emp(name,dept,desig,Basic)
 ('krishna','SAP','Programmer',66222)
 
 select * from emp
+select sum(basic) from emp
+select avg(basic) from emp
+select max(basic) from emp
+select min(basic) from emp
+select count(basic) from emp
+
+select dept, sum(basic) "total"
+from emp
+group by dept
+
+select dept, count(*) "no"
+from emp
+group by dept
 
 
-1)Sum:Used to generate sum on specified numeric column
-select sum(BAsic) from emp
+select dept, max(basic) "high"
+from emp
+group by dept
 
-2) Avg:Used to generate average on specified numeric column
-select avg(BAsic) from emp
+select dept, sum(basic),max(basic),avg(basic),min(basic),count(*)
+from emp
+group by dept
 
-3)Max: Displays MAx val
-select Max(BAsic) from emp
+select dept, sum(basic),max(basic),avg(basic),min(basic),count(*)
+from emp
+group by dept
+having count(*) >=2
 
-4)Min:
-select min(BAsic) from emp
+select dept, sum(basic),max(basic),avg(basic),min(basic),count(*)
+from emp
+group by dept
+having count(*) >=2
+order by dept
 
-5)Count(*):Displays total number of records
-Select count(*) from emp 
-
-6)GroupBy: used to generate aggregate reports.
-
-Select f1,f2,AggF
-From Table_Name Group by F1,F2
-
-fields we specify inSELECT must be followed after GROUP BY Clause
-
-select Dept,SUM(Basic) "TOTAL SAL"
-FROM EMP
-GROUP BY DEPT
-
-sELECT DEPT,COUNT(*) "EMPCOUNT"
-FROM EMP
-GROUP BY DEPT
-
-SELECT DEPT, MAX(baSIC) "maXsal"
-FROM EMP
-GROUP BY DEPT
-
-SELECT DEPT, MIN(baSIC) "maXsal"
-FROM EMP
-GROUP BY DEPT
-
-SELECT DEPT, AVG(baSIC) ,MAX(BASIC), MIN(BASIC), COUNT(*), SUM(BASIC)
-FROM EMP
-GROUP BY DEPT
-
-SELECT DEPT, AVG(baSIC) ,MAX(BASIC), MIN(BASIC), COUNT(*), SUM(BASIC)
-FROM EMP
-GROUP BY DEPT
-HAVING COUNT(*) >= 2
-
-SELECT DEPT, AVG(baSIC) ,MAX(BASIC), MIN(BASIC), COUNT(*), SUM(BASIC)
-FROM EMP
-GROUP BY DEPT
-HAVING COUNT(*) >= 2
-ORDER BY DEPT DESC
-
-SELECT DEPT, AVG(baSIC) ,MAX(BASIC), MIN(BASIC), COUNT(*), SUM(BASIC)
-FROM EMP
-WHERE DEPT IN('JAVA','SQL')
-GROUP BY DEPT
-HAVING COUNT(*) >= 2
-ORDER BY DEPT
-
-USE SQLPRACTICE
-
-7)  ORDER BY- IT SORTS
-
-
-
-
+select dept, sum(basic),max(basic),avg(basic),min(basic),count(*)
+from emp
+where dept in('java','sql')
+group by dept
+having count(*) >=2
+order by dept
