@@ -55,7 +55,8 @@ values('Sunitha','P','Premjee','Female','1988-01-02','434-55-3323',
 'MI','484555','USA'),
 ('Rama','U','Rao','Male',
 '1983-01-12','223-43-1444',1,'5th Mile','Ford Street','Chicago',
-'NY','2484555','USA'),
+'NY','2484555','USA'),+
+
 ('Madhuri','S','M','FeMale',
 '1989-12-12','423-33-2444',1,'Beach Street','Univ Road','NewYork',
 'CT','5484555','USA'),

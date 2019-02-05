@@ -3,10 +3,15 @@ how are u
 today day 3 in hexaware training
 thank you all
 <<<<<<< HEAD
+<<<<<<< HEAD
 hello im nikita
 hgjutk,gllg
 hgugitk,g
 
+=======
+Mera naam Joker
+Tamasha
+>>>>>>> e41a5b1e64f504dc4dad7818cf56e43b5669d6fd
 =======
 hi iam malar
 sjkfhsdjk hi how are you what are you doing
@@ -18,8 +23,31 @@ hi
 bye
 hi all 
 i am niru
+>>>>>>> e1db813f82437a2e53fb956c671ed7c8d727be99
 
 hello im nikita
 hgjutk,gllg
 hgugitk,g
+<<<<<<< HEAD
 >>>>>>> 8ffb7f80a6a15d26fff5030a8989cff33d5a5aeb
+=======
+<<<<<<< HEAD
+______________________
+
+<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+=======
+
+ /**
+    * Update LeaveBalance after ApplyLeave.
+    *@param empId the id of the Manager.
+    * @param updBal the latest leave Balance.
+    */
+    @SqlUpdate("UPDATE EMPLOYEE SET EMP_AVAIL_LEAVE_BALANCE = :updBal WHERE EMP_ID = :empId")
+    void decrement(@Bind("updBal") int updBal, @Bind("empId") int empId);
+>>>>>>> 9d6465df48015ff7056374e64c638f454f754f8d
+>>>>>>> e41a5b1e64f504dc4dad7818cf56e43b5669d6fd
