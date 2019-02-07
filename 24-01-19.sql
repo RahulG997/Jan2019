@@ -132,3 +132,10 @@ select * from agentpolicy
 
 delete from agent where agentid=1 
 
+
+use sqlpractice
+desc emp
+show tables
+ 
+alter table emp 
+modify column dept Name1 varchar(30)
