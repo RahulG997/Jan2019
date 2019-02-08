@@ -1,0 +1,62 @@
+ /**
+  * @param edao for mocking EmployeeDAO class.
+  * @param ldao for mocking LeaveDetailsDAO class.
+  * @throws ParseException for converting date to string.
+   */
+  @Test
+  public final void testApplyLeave(@Mocked final EmployeeDAO edao, @Mocked final LeaveDetailsDAO ldao)
+      throws ParseException {
+    final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    final String s1 = "1998-12-12";
+    final Date doj = sdf.parse(s1);
+    new Expectations() {
+      {
+        ldao.count(100, "2019-04-16", "2019-04-17"); result = 1;
+        ldao.count(100, "2019-04-30", "2019-04-30"); result = 0;
+        ldao.count(200, "2019-04-30", "2019-04-30"); result = 0;
+      }
+    };
+    new Expectations() {
+      {
+        ldao.insert(2, "2019-04-20", "2019-04-21", LeaveType.EL, "sick", "2019-02-07", LeaveStatus.APPROVED, 100);
+        ldao.insert(1, "2019-04-30", "2019-04-30", LeaveType.EL, "sick", "2019-02-07", LeaveStatus.PENDING, 200);
+      }
+    };
+    new Expectations() {
+      {
+        Employee e = new Employee(100, "Bhuvaneswari", "Bhuvi@gmail.com", "8872134444", doj, "FTP", 0, 12);
+        Employee e2 = new Employee(200, "Bhuvaneswari", "Bhuvi@gmail.com", "8872134444", doj, "FTP", 100, 12);
+        edao.find(100); result = e;
+        edao.find(200); result = e2;
+        edao.find(500); result = null;
+      }
+    };
+    new MockUp<LeaveDetails>() {
+      @Mock
+      LeaveDetailsDAO dao() {
+        return ldao;
+      }
+    };
+    new MockUp<Employee>() {
+      @Mock
+      EmployeeDAO dao() {
+        return edao;
+      }
+    };
+    String res1 = LeaveDetails.applyLeave(100, "2019-04-20", "2019-04-21", 2, LeaveType.EL, "sick");
+    assertEquals(res1, "Leave Autoapproved...");
+    String res2 = LeaveDetails.applyLeave(100, "2019-04-16", "2019-04-17", 2, LeaveType.EL, "sick");
+    assertEquals(res2, "Already Applied on Given Date...");
+    String res3 = LeaveDetails.applyLeave(100, "2019-04-30", "2019-04-30", 1, LeaveType.EL, "sick");
+    assertEquals(res3, "Leave Autoapproved...");
+    String res4 = LeaveDetails.applyLeave(100, "2019-04-28", "2019-04-30", 2, LeaveType.EL, "sick");
+    assertEquals(res4, "enter correct number of days as...3");
+    String res5 = LeaveDetails.applyLeave(100, "2019-04-28", "2019-05-30", 2, LeaveType.EL, "sick");
+    assertEquals(res5, "Insufficient Leave balance");
+    String res6 = LeaveDetails.applyLeave(100, "2019-01-28", "2019-05-30", 2, LeaveType.EL, "sick");
+    assertEquals(res6, "Insufficient Leave balance");
+    String res7 = LeaveDetails.applyLeave(500, "2019-05-30", "2019-05-30", 2, LeaveType.EL, "sick");
+    assertEquals(res7, "Employee ID not found");
+    String res8 = LeaveDetails.applyLeave(200, "2019-04-30", "2019-04-30", 1, LeaveType.EL, "sick");
+    assertEquals(res8, "Leave Applied successfully");
+  }
