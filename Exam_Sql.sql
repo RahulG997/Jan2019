@@ -1,4 +1,4 @@
-1 Display the last occurrence of given char 
+1 DiLEA_LEAVE_STATUSsplay the last occurrence of given char 
 in a string Ex: 'nikita' display last time i exists
 
 
@@ -21,3 +21,5 @@ Ex :  karthik, suhaas
 3) Add 5 years 7 months and 10 days to today's date
 
 4) Display all FRIDAY's of current month
+
+select * from employee
