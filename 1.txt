@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 hi
 how are u
 today day 3 in hexaware training
@@ -60,3 +61,6 @@ ______________________
 =======
 curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"comm":"0","deptno":"20","empno":"4158","hiredate":"1981-03-12","mgr":"7566","ename":"nikki","sal":"3000"}' "http://localhost:8080/Prac1/webapi/employees/employInsert"
 >>>>>>> 421291aa572b9e25c2cdb99308de46d239d6fb2f
+=======
+curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"empno":"1456","ename":"Priyanka","job":"FTP","mgr":"101","salary":"48234","Hiredate":"2019-02-12","comm":"9","deptno":"2"}' http://localhost:8080/TEST1/webapi/employees/employInsert
+>>>>>>> 1d6c180ee7f096bdd50b269ea5ef054f5dee5168
