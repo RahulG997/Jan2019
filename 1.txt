@@ -1,1 +1,1 @@
-curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"empno":"1551","name":"Praveen","dept":"Java","desig":"Programmer","basic":"48234"}' "http://localhost:8080/RestDbEmpUpd/webapi/employ/employInsert"
+curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"empno":"1456","ename":"Priyanka","job":"FTP","mgr":"101","salary":"48234","Hiredate":"2019-02-12","comm":"9","deptno":"2"}' http://localhost:8080/TEST1/webapi/employees/employInsert
