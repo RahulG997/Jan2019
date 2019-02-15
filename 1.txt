@@ -58,5 +58,5 @@ ______________________
 >>>>>>> 9d6465df48015ff7056374e64c638f454f754f8d
 >>>>>>> e41a5b1e64f504dc4dad7818cf56e43b5669d6fd
 =======
-curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"empno":"1551","name":"Praveen","dept":"Java","desig":"Programmer","basic":"48234"}' "http://localhost:8080/RestDbEmpUpd/webapi/employ/employInsert"
+curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"comm":"0","deptno":"20","empno":"4158","hiredate":"1981-03-12","mgr":"7566","ename":"nikki","sal":"3000"}' "http://localhost:8080/Prac1/webapi/employees/employInsert"
 >>>>>>> 421291aa572b9e25c2cdb99308de46d239d6fb2f
