@@ -1,4 +1,4 @@
-mvn archetype:generate -DgroupId=com.hexaware.ftp -DartifactId=JdbcApp -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.hexaware.ftp -DartifactId=Dept -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 
 
 
