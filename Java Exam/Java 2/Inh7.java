@@ -5,19 +5,15 @@ class C1 {
     a=5;
     b=8;
    }
-
-   public C1(int a,int b) {
+    public C1(int a,int b) {
        this.a=a;
        this.b=b;
    }
-
-    @Override
+     @Override
     public final String toString() {
         return "A is " +a+ " B is " +b;
     }
-   
 }
-
 class C2 extends C1 { 
    public C2(int a,int b) {
     super(a,b);

@@ -16,6 +16,7 @@ class C2 extends C1 {
     public C2(int a,int b) {
         super(a);
         this.b=b;
+        System.out.println(a+""+b);
     }
 }
 

@@ -5,7 +5,7 @@ public class P45 {
     public static void main(String[] args) throws ParseException {
         Date obj = new Date();
         System.out.println(obj);
-        String str ="2019/11/23";
+        String str ="2019/02/23";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date d = sdf.parse(str);
         System.out.println(d.getMonth());
