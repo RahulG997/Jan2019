@@ -5,6 +5,8 @@ public class Prog4 {
     
         System.out.println(b1);
         
-        b1 = 15 + 210; // Error. 225 is in the range -128 and 127 
+        b1 = 15 + 210; 
+        // System.out.println(b1);
+        // // Error. 225 is in the range -128 and 127 
     }
 }

@@ -1,10 +1,14 @@
 public class Prog22 {
     static {
-      throw new Exception("my exception");
-      System.out.println("2");
+      try {throw new Exception("my exception");
+      // System.out.println("2");
+      }
+      catch(Exception e){
+        System.out.println("2");
+      }
     }
-  
-    public static void main(String[] args) {
+ 
+    public static void main(String[] args){
       System.out.println("1");
     }
   }

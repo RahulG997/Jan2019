@@ -3,9 +3,12 @@ public class Tc {
         double b=12.5;
         int i =(int)b;
 
-        int x = 12;
-        long x1=x;
+        float x = 12;
         double y1 = x;
+        long x1=y1;
+        // System.out.println(y1);
+        System.out.println(x1);
+        
 
     }
 }

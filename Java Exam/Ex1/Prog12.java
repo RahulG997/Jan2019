@@ -4,7 +4,8 @@ public class Prog12 {
     Integer intObj1 = new Integer(100);
 
     // Creates an Integer object from a String
-    Integer intObj2 = new Integer("1234");
+    String intObj2 = new String("1234");
+    System.out.println(intObj2);
 
     // Creates a Double object from a double
     Double doubleObj1 = new Double(10.45);
