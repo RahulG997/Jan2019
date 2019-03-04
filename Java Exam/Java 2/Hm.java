@@ -7,7 +7,7 @@ public class Hm {
         hm.put(null, "Demo");
         hm.put(null, "Raj");
         hm.put(null,"Kalpana");
-        String x =(String)hm.getOrDefault(null, "Not found");
+        String x =(String)hm.getOrDefault(2, "Not found");
         System.out.println(x);
     }
 }

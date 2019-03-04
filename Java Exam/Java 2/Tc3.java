@@ -10,5 +10,6 @@ public class Tc3 {
         System.out.println("Double value "+d);
         System.out.println("Long value "+l);
         System.out.println("Int value "+i);
+        System.out.println("Int value "+b);
     }
 }

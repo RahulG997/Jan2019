@@ -5,5 +5,10 @@ public class Prog13 {
         Double doubleObj1 = Double.valueOf(10.45);
         Double doubleObj2 = Double.valueOf("1234.60");
         Character charObj1 = Character.valueOf('A');
+        System.out.println(intObj1);
+        System.out.println(intObj2);
+        System.out.println(doubleObj1);
+        System.out.println(doubleObj2);
+        System.out.println(charObj1);
     }
 }
