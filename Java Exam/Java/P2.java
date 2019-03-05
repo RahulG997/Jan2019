@@ -1,6 +1,6 @@
 public class P2 {
     public void show(Object ob) {
-        if (ob=="ABC") {
+        if (ob.equals("ABC")) {
             System.out.println("Correct A AND D");
         } else {
             System.out.println("Error B AND C");
