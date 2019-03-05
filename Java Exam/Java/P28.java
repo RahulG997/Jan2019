@@ -1,5 +1,5 @@
 class C1 {
-    void test() {
+     void test() {
         System.out.println("Welcome...");
     }
 }
