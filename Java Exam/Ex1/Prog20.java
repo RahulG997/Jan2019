@@ -9,7 +9,7 @@ public class Prog20 {
         m.put(2, "Kolage");
         m.put(3, "Salve");
         m.put(1, "Babbar");
-        m.put(null, "Hi");
+        // m.put(null, "Hi");
 
         String res = (String) m.getOrDefault(null, "Not Found");
         System.out.println(res);

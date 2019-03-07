@@ -1,0 +1,115 @@
+
+
+<html>
+    <body>
+      <style>
+        table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #7aaed1}
+  
+  th {
+    background-color: rgb(17, 68, 141);
+    color: white;
+  }
+  
+
+  .bg-image {
+    background-image: url("https://newevolutiondesigns.com/images/freebies/white-wallpaper-9.jpg");
+    /* background-color: #cccccc; */
+    height: 640px;
+    width:1350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: rgb(17, 68, 141);
+}
+tr:hover {background-color:#9fcdec;}
+
+     </style>
+  <ul>
+      
+      <li><a (click)="dashboard()" class="btn btn-primary">DashBoard</a></li>&nbsp;&nbsp;
+      <li><a class="active">History</a></li>
+      <li><a (click)="pending()" class="btn btn-primary">Pending Leave</a></li>&nbsp;&nbsp;
+      <li><a (click)="apply()" class="btn btn-primary">ApplyLeave</a></li>&nbsp;&nbsp;
+      <li style="float:right"><a (click)="employee()"  class="btn btn-primary">SignOut</a></li>
+      
+      </ul>
+      
+   <div class="bg-image">
+  <br/>
+<table border="3">
+  <tr>
+    <th>levId</th>
+    <th>levNoOfDays</th>
+    <th>levstartDate</th>
+    <th>levEndDate</th>
+    <th>levType</th>
+    <th>levStatus</th>
+    <th>levReason</th>
+    <th>levApplyDate</th>
+    <th>levMgrComments</th>
+    <th>empId</th>
+
+  </tr>
+  <tr *ngFor="let emp of leavedetails | async | paginate : {id: 'listing_pagination',
+  itemsPerPage: 2,
+  currentPage: page,
+  totalItems: totalRec}" >
+    <td>{{emp.levId}}</td>
+    <td>{{emp.levNoOfDays}}</td>
+    <td>{{emp.levStartDate}}</td>
+    <td>{{emp.levEndDate}}</td>
+    <td>{{emp.levType}}</td>
+    <td>{{emp.levStatus}}</td>
+    <td>{{emp.levReason}}</td>
+    <td>{{emp.levApplyDate}}</td>
+    <td>{{emp.levMgrComments}}</td>
+    <td>{{emp.empId}}</td>
+    <!-- <td>
+    <input type="button" value="login" (click) ="login(emp.levId)"/>
+    </td> -->
+  </tr>
+</table>
+<div>
+    <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
+
+</body>
+</html>
