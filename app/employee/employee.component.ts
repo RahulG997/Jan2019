@@ -22,10 +22,10 @@ export class EmployeeComponent implements OnInit {
     localStorage.setItem("empId",empId);
     localStorage.setItem("empMgrId",empMgrId);
     this._router.navigate(["/Login"]);
-  }
-  ngOnInit() { 
-    this._employeeService.getEmployee().subscribe(c => this.employees = c); 
     
   }
-
+  ngOnInit() { 
+    
+    this._employeeService.getEmployee().subscribe(c => this.employees = c); 
+  }
 }

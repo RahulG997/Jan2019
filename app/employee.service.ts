@@ -18,6 +18,8 @@ export class EmployeeService {
       {
   return this.http.get
   ("http://localhost:8080/FTP113/api/employees")
-  .map ((res:Response) => res.json())
+  .map ((res:Response) =>  {
+    return res.json();
+  })
       }
 }

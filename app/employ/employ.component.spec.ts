@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { of } from 'rxjs/observable/of';
 
 const userServiceStub = {
-  searchEmployee(empid) {
+  searchEmployee(empid : number) {
     console.log('came inside the stub');
     const emps = [
       {
@@ -54,10 +54,7 @@ describe('EmployComponent', () => {
    xit(`the name employee Id to be '1000'`, async(()=>{
     const fixture = TestBed.createComponent(EmployComponent);
     const app = fixture.debugElement.componentInstance;
-    spyOn(employService, 'searchEmployee').and.returnValue( of (userServiceStub));
     app.ngOnInit();
-    alert(app.employ);
-    console.log(app.employ);
     expect(app.employee.empId).toEqual(1000);
   }));
 

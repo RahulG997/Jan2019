@@ -27,7 +27,8 @@
               <th>Manager Comments</th>
               </tr>
         </div>
-        <table border ="3">
+        <table border ="3"> 
+           <tbody class="leave">
             <div *ngFor="let ld of leavedetails | async | orderBy: order:reverse" (click)="setClickRowDup(ld.leaId, e.empId)">
             <div *ngIf="e.empId == ld.leaEmpId" rowspan=200 px>
                <div *ngIf="tat(ld.leaStartDate)==1">
@@ -57,7 +58,8 @@
                   </tr>
                </div>
             </div>
-         </div>
+         </div> 
+         </tbody>
             </table>
             <br/>
    </div>

@@ -9,6 +9,7 @@
     <br/><h1 id=head> LEAVE HISTORY </h1>
   
     <table border="7" width=100%>
+        <tbody class="employees">
     <tr>
       <th>Leave Id</th><th>EmpId</th><th>NumberOfDays</th><th>StartDate</th>
       <th>EndDate</th><th>LeaveType</th><th>Status</th><th>Reason</th><th>AppliedOn</th>
@@ -31,7 +32,8 @@
       <td>{{e.leaReason}}</td>
       <td>{{e.leaAppliedOn}}</td>
       <td>{{e.leaManagerComment}}</td>
-    </tr>
+    </tr> 
+    </tbody>
     </table> 
     <b><pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls></b>
     <div align = center>
