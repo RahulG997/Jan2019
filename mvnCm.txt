@@ -1,4 +1,12 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+mvn archetype:generate -DgroupId=com.hexaware.ftp113 -DartifactId=JunitDemo -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+=======
+mvn archetype:generate -DgroupId=com.hexaware.ftp115 -DartifactId=JunitDemos -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+>>>>>>> e25e697676ef1bd9e2634c1f0d341239bb801886
+=======
 mvn archetype:generate -DgroupId=com.hexaware.ftp116 -DartifactId=JunitDemos -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+>>>>>>> 1c9d63f932a477f677ce44122c6194c8919503e3
 
 _________________________________________________________________
 

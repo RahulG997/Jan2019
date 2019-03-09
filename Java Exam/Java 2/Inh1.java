@@ -9,7 +9,7 @@ class Second extends First {
         System.out.println("Show From Second...");
     }
 }
-public class Inh1 {
+public class inh1 {
     public static void main(String[] args) {
         First obj = new Second();
         obj.show();
