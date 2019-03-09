@@ -424,7 +424,30 @@ Used to bind events.
   </p>
 </ng-template>
 
- 
+ In Angular 4, the following four statuses are commonly used by forms:
+
+valid – state of the validity of all form controls, true if all controls are valid
+
+invalid – inverse of valid; true if some control is invalid
+
+pristine – gives a status about the “cleanness” of the form; true if no control was modified
+
+dirty – inverse of pristine; true if some control was modified
+
+import { NG_VALIDATORS, Validator, FormControl, ValidationErrors } from '@angular/forms';
+
+<input type="text" [(ngModel)]="name" value="Hexaware" /> 
+
+By default textbox value is "Hexaware"
+
+If you change the value, then it comes under dirty, because the value got changed. 
+
+If you dont change the value, then it comes under pristine, because the value is not changed. 
+
+*** If any question comes as cleaniness of the form, please choose the option as "pristine" *** 
+
+
+
 
 
 
