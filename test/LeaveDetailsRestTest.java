@@ -18,6 +18,47 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class LeaveDetailsRestTest {
 
+    @Test
+    public void testApplyLeave() throws AssertionError, URISyntaxException {
+
+        
+     String res1=given().accept(ContentType.JSON).contentType("application/json").body("{\"leaNumberOfDays\":\"1\",\"leaStartDate\":\"2019-12-09\",\"leaEndDate\":\"2019-12-08\",\"leaLeaveType\":\"EL\",\"leaReason\":\"sick\"}").
+        when().post(CommonUtil.getURI("/api/leaveDetails/applyleave/3000")).getBody().asString();
+    
+     assertEquals("Enter Correct No. of Days As.... 0", res1);
+
+     String res2=given().accept(ContentType.JSON).contentType("application/json").body("{\"leaStartDate\":\"2019-12-09\",\"leaEndDate\":\"2019-12-07\",\"leaLeaveType\":\"EL\",\"leaNumberOfDays\":\"0\",\"leaReason\":\"sick\"}").
+        when().post(CommonUtil.getURI("/api/leaveDetails/applyleave/3000")).getBody().asString();
+    
+     assertEquals("End date must be greater than Start date... ", res2);
+
+     String res3=given().accept(ContentType.JSON).contentType("application/json").body("{\"leaStartDate\":\"2019-03-09\",\"leaEndDate\":\"2019-03-09\",\"leaLeaveType\":\"EL\",\"leaNumberOfDays\":\"1\",\"leaReason\":\"sick\"}").
+        when().post(CommonUtil.getURI("/api/leaveDetails/applyleave/3000")).getBody().asString();
+    
+     assertEquals("StartDate cannot be saturday...", res3);
+
+    String res4=given().accept(ContentType.JSON).contentType("application/json").body("{\"leaStartDate\":\"2019-03-10\",\"leaEndDate\":\"2019-03-10\",\"leaLeaveType\":\"EL\",\"leaNumberOfDays\":\"1\",\"leaReason\":\"sick\"}").
+        when().post(CommonUtil.getURI("/api/leaveDetails/applyleave/3000")).getBody().asString();
+    
+     assertEquals("StartDate cannot be sunday...", res4);
+
+     String res5=given().accept(ContentType.JSON).contentType("application/json").body("{\"leaStartDate\":\"2019-03-07\",\"leaEndDate\":\"2019-03-07\",\"leaLeaveType\":\"EL\",\"leaNumberOfDays\":\"1\",\"leaReason\":\"sick\"}").
+        when().post(CommonUtil.getURI("/api/leaveDetails/applyleave/3000")).getBody().asString();
+    
+     assertEquals("Already applied on given date....", res5);
+
+    String res6=given().accept(ContentType.JSON).contentType("application/json").body("{\"leaStartDate\":\"2019-02-28\",\"leaEndDate\":\"2019-02-28\",\"leaLeaveType\":\"EL\",\"leaNumberOfDays\":\"1\",\"leaReason\":\"sick\"}").
+        when().post(CommonUtil.getURI("/api/leaveDetails/applyleave/3000")).getBody().asString();
+    
+     assertEquals("Start date is less than current date", res6);
+
+      String res7=given().accept(ContentType.JSON).contentType("application/json").body("{\"leaStartDate\":\"2019-04-30\",\"leaEndDate\":\"2019-05-28\",\"leaLeaveType\":\"EL\",\"leaNumberOfDays\":\"1\",\"leaReason\":\"sick\"}").
+        when().post(CommonUtil.getURI("/api/leaveDetails/applyleave/2000")).getBody().asString();
+    
+     assertEquals("Insufficient leave balance.. ", res7);
+
+    }
+
     @Test 
     public void testLeaveHistory() throws AssertionError, URISyntaxException,ParseException { 
               
