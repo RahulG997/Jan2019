@@ -102,12 +102,26 @@ public class EmployeeRestTest {
 				.get(CommonUtil.getURI("/api/employees/2000")).getBody().as(Employee.class);
 		// assertEquals(e101, res);
 		assertEquals(e102.getEmpId(), res1.getEmpId());
+		assertEquals(e102.getEmpFullName(), res1.getEmpFullName());
+		assertEquals(e102.getEmpEmail(), res1.getEmpEmail());
+		assertEquals(e102.getEmpMobileNo(), res1.getEmpMobileNo());
+		assertEquals(e102.getEmpDepartment(), res1.getEmpDepartment());
+		assertEquals(e102.getEmpMgrId(), res1.getEmpMgrId());
+		assertEquals(e102.getEmpAvailLeavBal(), res1.getEmpAvailLeavBal());
 
-		Employee e103 = new Employee(3000, "PAVANPREMKUMAR ", "PAVANPREM@HEXAWARE.COM", "897235639", doj2, "HEXAVARSITY", 1000, 0);
+
+		Employee e103 = new Employee(3000, "PAVANPREMKUMAR ", "PAVANPREM@HEXAWARE.COM", "897235639", doj2, "HEXAVARSITY", 1000, 33);
 		Employee res2 = given().accept(ContentType.JSON).when()
 				.get(CommonUtil.getURI("/api/employees/3000")).getBody().as(Employee.class);
 		// assertEquals(e101, res);
 		assertEquals(e103.getEmpId(), res2.getEmpId());
+		assertEquals(e103.getEmpFullName(), res2.getEmpFullName());
+		assertEquals(e103.getEmpEmail(), res2.getEmpEmail());
+		assertEquals(e103.getEmpMobileNo(), res2.getEmpMobileNo());
+		assertEquals(e103.getEmpDepartment(), res2.getEmpDepartment());
+		assertEquals(e103.getEmpMgrId(), res2.getEmpMgrId());
+		assertEquals(e103.getEmpAvailLeavBal(), res2.getEmpAvailLeavBal());
+
 
 
 		Employee e104 = new Employee(4000, "NISHTHA BABBAR", "NISHTHAB@HEXAWARE.COM", "896834599", doj3, "HEXAVARSITY", 2000, 40);
@@ -115,6 +129,12 @@ public class EmployeeRestTest {
 				.get(CommonUtil.getURI("/api/employees/4000")).getBody().as(Employee.class);
 		// assertEquals(e101, res);
 		assertEquals(e104.getEmpId(), res3.getEmpId());
+		assertEquals(e104.getEmpFullName(), res3.getEmpFullName());
+		assertEquals(e104.getEmpEmail(), res3.getEmpEmail());
+		assertEquals(e104.getEmpMobileNo(), res3.getEmpMobileNo());
+		assertEquals(e104.getEmpDepartment(), res3.getEmpDepartment());
+		assertEquals(e104.getEmpMgrId(), res3.getEmpMgrId());
+		assertEquals(e104.getEmpAvailLeavBal(), res3.getEmpAvailLeavBal());
 
 
 		Employee e105 = new Employee(5000, "KARTHIGA PITCHIAH", "KARTHIGAP@HEXAWARE.COM", "9488779298", doj4, "HEXAVARSITY", 3000, 21);
@@ -122,6 +142,12 @@ public class EmployeeRestTest {
 				.get(CommonUtil.getURI("/api/employees/5000")).getBody().as(Employee.class);
 		// assertEquals(e101, res);
 		assertEquals(e105.getEmpId(), res4.getEmpId());
+		assertEquals(e105.getEmpFullName(), res4.getEmpFullName());
+		assertEquals(e105.getEmpEmail(), res4.getEmpEmail());
+		assertEquals(e105.getEmpMobileNo(), res4.getEmpMobileNo());
+		assertEquals(e105.getEmpDepartment(), res4.getEmpDepartment());
+		assertEquals(e105.getEmpMgrId(), res4.getEmpMgrId());
+		assertEquals(e105.getEmpAvailLeavBal(), res4.getEmpAvailLeavBal());
 
   }
   
