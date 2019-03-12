@@ -13,7 +13,7 @@ import { EmployeeService } from '../employee.service';
 })
 export class LeavePendingComponent implements OnInit {
 
-  leavedetails : Observable<LeavePending>;
+  leavedetails : Observable<LeavePending[]>; 
   empData : Observable<Employee[]>;
   empno : number;
   mgr : number;
@@ -30,6 +30,7 @@ export class LeavePendingComponent implements OnInit {
   obj : LeavePending;
   mgrid : number;
   status : string;
+  lpending:LeavePending[] = [];
   message : String;
  
 
@@ -102,6 +103,7 @@ export class LeavePendingComponent implements OnInit {
     this.empData = empService.getEmployee();
     }
   ngOnInit() {
+    this.leaveDetailsService.searchLeave(this.empno).subscribe(res => {this.lpending = res});
   }
 
   

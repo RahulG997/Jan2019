@@ -17,10 +17,12 @@ export class LeaveHistoryComponent implements OnInit {
   
   page:number = 1;
   totalRec : number;
-  leavePending : Observable<LeavePending[]>;
+  // leavePending : Observable<LeavePending[]>;
+  // leavePen 
   empId : number;
   empData : Observable<Employee[]>;
   leavehistory : Observable<Leavehistory[]>;
+  lhistory:Leavehistory[] = [];
   applyLeave() {
     this._router.navigate(["/ApplyLeave"]);
   }
@@ -33,6 +35,7 @@ empno : number;
   }
 
   ngOnInit() {
+    this.leavehistoryService.searchLeaveHistory(this.empno).subscribe(res => {this.lhistory = res});
   }
 
 }

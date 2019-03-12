@@ -34,7 +34,7 @@ export class LeavePendingService {
  ("http://localhost:8080/FTP113/api/leaveDetails/leaveHistory/"+EmpId)
  .map((res:Response) => res.json())
     }
-  searchLeave(EmpId:number): Observable<LeavePending>{
+  searchLeave(EmpId:number): Observable<LeavePending[]>{
     return this.http.get
  ("http://localhost:8080/FTP113/api/leaveDetails/listPending/"+EmpId)
  .map((res:Response) => res.json())
