@@ -1,4 +1,13 @@
+<<<<<<< HEAD
+dabnjsdbhajb
+sdnsn
+asdnakl
+=======
 Today git started
 bye
+<<<<<<< HEAD
+>>>>>>> 004d2d39da23ea8ff903468210a6870c0f442876
+=======
 hii its nikita
 bye now
+>>>>>>> 1c9d63f932a477f677ce44122c6194c8919503e3

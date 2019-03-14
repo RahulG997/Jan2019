@@ -1,12 +1,13 @@
 enum Test {
-    A, B, X, Y, P, C;
+    A, B, X, Y, P, C,N;
     private Test() {
         System.out.println("Hi");
     }
 }
 
 public class P13 {
-    public static void main(String[] args) {
-        Enum t = Test.Y;
+    public static void main(String[] args) { 
+        Test t =Test.N;
+        //Test t = Test.Y;
     }
 }

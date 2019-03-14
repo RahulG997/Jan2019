@@ -10,10 +10,10 @@ public class Prog11 {
     i = i--;       // Assigns 10 to i
     System.out.println(i);
     i = 10; 
-    j = i-- + 10;  // Assigns 20 to j and 9 to i
+    j = i-- + 10;  
     System.out.println(j);
     i = 10; 
-    j = --i + 10;  // Assigns 19 to j and 9 to i 
+    j = --i + 10; 
 
     System.out.println(j);
     }

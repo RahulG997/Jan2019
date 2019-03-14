@@ -1,6 +1,6 @@
 public class Prog2 {
-    public static void main(String[] argv) {
-        byte b = 5;
+    public static void main(String[] args) {
+        long b = 5;
     char c = 'a'; 
     short s = -2; 
     int i = 10; 

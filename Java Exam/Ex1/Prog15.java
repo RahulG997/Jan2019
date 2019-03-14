@@ -19,7 +19,7 @@ public class Prog15 {
     double d = doubleObj.doubleValue();
     float f = doubleObj.floatValue();
     int i = doubleObj.intValue();
-    long l = doubleObj.longValue();
+    byte l = doubleObj.longValue();
 
     System.out.println("doubleObj = " + doubleObj);
     System.out.println("double from doubleObj = " + d);
