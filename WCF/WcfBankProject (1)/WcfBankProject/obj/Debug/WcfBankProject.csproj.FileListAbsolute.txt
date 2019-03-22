@@ -1,0 +1,6 @@
+C:\Users\rajee\Documents\Visual Studio 2017\Practice\WcfServiceAccount\WcfBankProject\bin\WcfBankProject.dll.config
+C:\Users\rajee\Documents\Visual Studio 2017\Practice\WcfServiceAccount\WcfBankProject\bin\WcfBankProject.dll
+C:\Users\rajee\Documents\Visual Studio 2017\Practice\WcfServiceAccount\WcfBankProject\bin\WcfBankProject.pdb
+C:\Users\rajee\Documents\Visual Studio 2017\Practice\WcfServiceAccount\WcfBankProject\obj\Debug\WcfBankProject.csproj.CoreCompileInputs.cache
+C:\Users\rajee\Documents\Visual Studio 2017\Practice\WcfServiceAccount\WcfBankProject\obj\Debug\WcfBankProject.dll
+C:\Users\rajee\Documents\Visual Studio 2017\Practice\WcfServiceAccount\WcfBankProject\obj\Debug\WcfBankProject.pdb
