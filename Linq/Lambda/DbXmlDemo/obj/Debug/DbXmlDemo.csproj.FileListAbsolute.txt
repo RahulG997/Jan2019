@@ -1,0 +1,6 @@
+d:\Dotnet_Aishwarya\Lambda\DbXmlDemo\bin\Debug\DbXmlDemo.exe.config
+d:\Dotnet_Aishwarya\Lambda\DbXmlDemo\bin\Debug\DbXmlDemo.exe
+d:\Dotnet_Aishwarya\Lambda\DbXmlDemo\bin\Debug\DbXmlDemo.pdb
+d:\Dotnet_Aishwarya\Lambda\DbXmlDemo\obj\Debug\DbXmlDemo.csprojResolveAssemblyReference.cache
+d:\Dotnet_Aishwarya\Lambda\DbXmlDemo\obj\Debug\DbXmlDemo.exe
+d:\Dotnet_Aishwarya\Lambda\DbXmlDemo\obj\Debug\DbXmlDemo.pdb

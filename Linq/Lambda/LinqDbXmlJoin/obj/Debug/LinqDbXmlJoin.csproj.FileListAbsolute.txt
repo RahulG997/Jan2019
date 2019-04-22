@@ -1,0 +1,6 @@
+d:\Dotnet_Aishwarya\Lambda\LinqDbXmlJoin\bin\Debug\LinqDbXmlJoin.exe.config
+d:\Dotnet_Aishwarya\Lambda\LinqDbXmlJoin\bin\Debug\LinqDbXmlJoin.exe
+d:\Dotnet_Aishwarya\Lambda\LinqDbXmlJoin\bin\Debug\LinqDbXmlJoin.pdb
+d:\Dotnet_Aishwarya\Lambda\LinqDbXmlJoin\obj\Debug\LinqDbXmlJoin.csprojResolveAssemblyReference.cache
+d:\Dotnet_Aishwarya\Lambda\LinqDbXmlJoin\obj\Debug\LinqDbXmlJoin.exe
+d:\Dotnet_Aishwarya\Lambda\LinqDbXmlJoin\obj\Debug\LinqDbXmlJoin.pdb

@@ -1,0 +1,5 @@
+d:\Dotnet_Aishwarya\Lambda\LinqXml\bin\Debug\LinqXml.exe.config
+d:\Dotnet_Aishwarya\Lambda\LinqXml\bin\Debug\LinqXml.exe
+d:\Dotnet_Aishwarya\Lambda\LinqXml\bin\Debug\LinqXml.pdb
+d:\Dotnet_Aishwarya\Lambda\LinqXml\obj\Debug\LinqXml.exe
+d:\Dotnet_Aishwarya\Lambda\LinqXml\obj\Debug\LinqXml.pdb

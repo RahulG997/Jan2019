@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sqlpractice" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PRASSANA-PC;Initial Catalog=sqlpractice;Persist Security Info=True;User ID=sa" SettingsObjectName="LambdaJoinDbExample.Properties.Settings" SettingsPropertyName="sqlpracticeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Agent" Member="Agents">
+    <Type Name="Agent">
+      <Column Name="AgentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MI" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MaritalStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="STATE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="InsertedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DeletedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Agent_AgentPolicy" Member="AgentPolicies" ThisKey="AgentID" OtherKey="AgentID" Type="AgentPolicy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AgentPolicy" Member="AgentPolicies">
+    <Type Name="AgentPolicy">
+      <Column Name="AgentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PolicyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsSplitAgent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DeletedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Agent_AgentPolicy" Member="Agent" ThisKey="AgentID" OtherKey="AgentID" Type="Agent" IsForeignKey="true" />
+      <Association Name="Policy_AgentPolicy" Member="Policy" ThisKey="PolicyID" OtherKey="PolicyID" Type="Policy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Policy" Member="Policies">
+    <Type Name="Policy">
+      <Column Name="PolicyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppNumber" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="AppDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PolicyNumber" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="AnnualPremium" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="PaymentModeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModalPremium" Type="System.Decimal" DbType="Decimal(9,2)" CanBeNull="true" />
+      <Column Name="InsertedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Deletedon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="Policy_AgentPolicy" Member="AgentPolicies" ThisKey="PolicyID" OtherKey="PolicyID" Type="AgentPolicy" />
+    </Type>
+  </Table>
+</Database>

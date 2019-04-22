@@ -1,0 +1,6 @@
+d:\Dotnet_Aishwarya\Lambda\LambdaDbExample\bin\Debug\LambdaDbExample.exe.config
+d:\Dotnet_Aishwarya\Lambda\LambdaDbExample\bin\Debug\LambdaDbExample.exe
+d:\Dotnet_Aishwarya\Lambda\LambdaDbExample\bin\Debug\LambdaDbExample.pdb
+d:\Dotnet_Aishwarya\Lambda\LambdaDbExample\obj\Debug\LambdaDbExample.csprojResolveAssemblyReference.cache
+d:\Dotnet_Aishwarya\Lambda\LambdaDbExample\obj\Debug\LambdaDbExample.exe
+d:\Dotnet_Aishwarya\Lambda\LambdaDbExample\obj\Debug\LambdaDbExample.pdb

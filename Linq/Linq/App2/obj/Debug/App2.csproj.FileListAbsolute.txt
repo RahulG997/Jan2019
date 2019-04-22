@@ -1,0 +1,5 @@
+d:\Dotnet_Aishwarya\Linq\App2\bin\Debug\App2.exe.config
+d:\Dotnet_Aishwarya\Linq\App2\bin\Debug\App2.exe
+d:\Dotnet_Aishwarya\Linq\App2\bin\Debug\App2.pdb
+d:\Dotnet_Aishwarya\Linq\App2\obj\Debug\App2.exe
+d:\Dotnet_Aishwarya\Linq\App2\obj\Debug\App2.pdb

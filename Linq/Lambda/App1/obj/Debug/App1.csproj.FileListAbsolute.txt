@@ -1,0 +1,6 @@
+d:\Dotnet_Aishwarya\Lambda\App1\bin\Debug\App1.exe.config
+d:\Dotnet_Aishwarya\Lambda\App1\bin\Debug\App1.exe
+d:\Dotnet_Aishwarya\Lambda\App1\bin\Debug\App1.pdb
+d:\Dotnet_Aishwarya\Lambda\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
+d:\Dotnet_Aishwarya\Lambda\App1\obj\Debug\App1.exe
+d:\Dotnet_Aishwarya\Lambda\App1\obj\Debug\App1.pdb

@@ -1,0 +1,5 @@
+d:\Dotnet_Aishwarya\Lambda\LambdaEmp\bin\Debug\LambdaEmp.exe.config
+d:\Dotnet_Aishwarya\Lambda\LambdaEmp\bin\Debug\LambdaEmp.exe
+d:\Dotnet_Aishwarya\Lambda\LambdaEmp\bin\Debug\LambdaEmp.pdb
+d:\Dotnet_Aishwarya\Lambda\LambdaEmp\obj\Debug\LambdaEmp.exe
+d:\Dotnet_Aishwarya\Lambda\LambdaEmp\obj\Debug\LambdaEmp.pdb

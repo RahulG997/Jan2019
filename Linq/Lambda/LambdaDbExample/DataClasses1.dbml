@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sqlpractice" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PRASSANA-PC;Initial Catalog=sqlpractice;Persist Security Info=True;User ID=sa" SettingsObjectName="LambdaDbExample.Properties.Settings" SettingsPropertyName="sqlpracticeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Employ" Member="Employs">
+    <Type Name="Employ">
+      <Column Name="Empno" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Dept" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Desig" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Basic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Agent" Member="Agents">
+    <Type Name="Agent">
+      <Column Name="AgentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MI" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MaritalStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="STATE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="InsertedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DeletedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

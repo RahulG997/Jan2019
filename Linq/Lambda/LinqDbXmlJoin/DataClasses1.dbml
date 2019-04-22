@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sqlpractice" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PRASSANA-PC;Initial Catalog=sqlpractice;Persist Security Info=True;User ID=sa" SettingsObjectName="LinqDbXmlJoin.Properties.Settings" SettingsPropertyName="sqlpracticeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AgentPDup" Member="AgentPDups">
+    <Type Name="AgentPDup">
+      <Column Name="AgentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SSN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,6 @@
+d:\Dotnet_Aishwarya\Linq\LinqDb\bin\Debug\LinqDb.exe.config
+d:\Dotnet_Aishwarya\Linq\LinqDb\bin\Debug\LinqDb.exe
+d:\Dotnet_Aishwarya\Linq\LinqDb\bin\Debug\LinqDb.pdb
+d:\Dotnet_Aishwarya\Linq\LinqDb\obj\Debug\LinqDb.csprojResolveAssemblyReference.cache
+d:\Dotnet_Aishwarya\Linq\LinqDb\obj\Debug\LinqDb.exe
+d:\Dotnet_Aishwarya\Linq\LinqDb\obj\Debug\LinqDb.pdb
