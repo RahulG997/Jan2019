@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api'
+import { ActivatedRoute,Router } from '@angular/router';
 @Component({
   selector: 'app-menu-ex',
   templateUrl: './menu-ex.component.html',
@@ -7,7 +8,9 @@ import {MenuItem} from 'primeng/api'
 })
 export class MenuExComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   items: MenuItem[];
 
@@ -20,8 +23,11 @@ export class MenuExComponent implements OnInit {
                       label: 'Program Manager', 
                       icon: 'pi pi-fw pi-plus',
                       items: [
-                          {label: 'Detailed Structure', icon: 'pi pi-fw pi-user-plus'},
-                          {label: 'Locations ', icon: 'pi pi-fw pi-filter'},
+                          {label: 'Detailed Structure', icon: 
+                          'pi pi-fw pi-user-plus'
+                        },
+                          {label: 'Locations ', icon: 'pi pi-fw pi-filter',"routerLink": "['Details']"
+                        },
                           {label: 'Terms and Conditions ', icon: 'pi pi-fw pi-user-plus'},
                           {label: 'Premium Manager ', icon: 'pi pi-fw pi-user-plus'},
                           {label: 'Submission Manager ', icon: 'pi pi-fw pi-user-plus'},
