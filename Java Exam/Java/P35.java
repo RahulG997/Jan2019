@@ -9,5 +9,6 @@ public class P35 {
 
     public static void main(String[] args) { 
         show();
+        System.out.println(x);
     }
 }
