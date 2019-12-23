@@ -9,7 +9,6 @@ public class P1 {
                 break;
             case 3 : 
                 System.out.println("Hello 3");
-                break;
             case 4 :
                 System.out.println("Test 4");
             case 5 : 
