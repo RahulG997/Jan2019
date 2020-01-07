@@ -1,0 +1,21 @@
+katireddi@gmail.com 
+
+https://stackoverflow.com/questions/45347860/angular-4-no-access-control-allow-origin-header-is-present-on-the-requested
+
+https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+
+
+curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"empno":"8994","name":"Kalpana","dept":"Java","desig":"Programmer","basic":"48234"}' "http://localhost:8080/RestDbEmp/webapi/employ/employInsert"
+
+mvn archetype:generate -DgroupId=com.hexaware.ftp02 -DartifactId=LeaveManagement -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+http://rogerdudler.github.io/git-guide/
+
+
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-webapp -DarchetypeGroupId=org.glassfish.jersey.archetypes -DarchetypeVersion=2.25.1
+
+
+mvn exec:java -Dexec.mainClass=com.hexaware.ftp02.util.CliMain
+
+mvn exec:java -Dexec.mainClass=com.hexaware.cms.util.CliMain
